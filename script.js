@@ -12,9 +12,9 @@ function getRndInteger(min, max) {
 // SCRIPT----- 
 
 // stampiamo in pagina 5 numeri casuali
-const number = 5;
+
 const listNumber = [];
-    while (listNumber.length < number  ) {
+    for(let i = 0; i< 5; i++) {
         //genero numeri random fra 1 e 100
         let numberRandom = getRndInteger(1,100)
         // pushamo dentro l'array 
@@ -29,11 +29,22 @@ let usernumber;
 let userList = [];
 
 
-setTimeout(function (){
-    for ( let i=0; i<5; i++)
-  usernumber = prompt("inserisci i numeri che hai visto prima")
-  userList.push(usernumber); 
-  console.log(userList)
-}, 3000);
+setTimeout(function() {
+    for (let i = 0; i < 5; i++) {
+        usernumber = Number(prompt("inserisci i numeri che hai visto"));
+      for (let j = 0; j < listNumber.length; j++) {
+        if (usernumber == listNumber[j]) {
+            userList.push(usernumber);
+        }
+      }
+    }
+    
+// Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
+    alert("Sei riuscito ad indovinare " + userList.length + " numeri su 5. Esattamente i numeri che hai indovinato sono: " + userList)
+    console.log(userList)
+  }, 3000);
+
+
+
 
 
