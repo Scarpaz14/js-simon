@@ -28,12 +28,12 @@ const listNumber = [];
 let usernumber;
 let userList = [];
 
+
 setTimeout(function (){
     for ( let i=0; i<5; i++)
   usernumber = prompt("inserisci i numeri che hai visto prima")
   userList.push(usernumber); 
   console.log(userList)
 }, 3000);
-
 
 
